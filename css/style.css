@@ -1,0 +1,17 @@
+#galeriaAlunos {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* limita a largura */
+  height: 300px;     /* altura do carousel */
+  overflow: hidden;
+}
+
+#galeriaAlunos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção e preenche área */
+  border-radius: 8px;
+  display: none; /* o JS vai mostrar a primeira imagem */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.5s ease-in-out;
+}

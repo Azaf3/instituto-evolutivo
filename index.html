@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Evolutivo de Educação</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logo-colorido-iee.jpg" alt="Logo Instituto Evolutivo" width="50" class="me-2">
+        <span class="fw-bold">Instituto Evolutivo de Educação</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-5 bg-light text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Bem-vindo ao Instituto Evolutivo de Educação</h1>
+      <p class="lead">Formação em Psicanálise, Estética, Cosméticos e muito mais.</p>
+      <a href="cursos.html" class="btn btn-primary btn-lg mt-3">Conheça nossos cursos</a>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Curso de Psicanálise</h5>
+              <p class="card-text">Aprofunde-se na mente humana com nosso curso de psicanálise completo.</p>
+              <a href="cursos.html" class="btn btn-outline-primary">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Estética e Cosméticos</h5>
+              <p class="card-text">Aprenda técnicas modernas e científicas de estética e cosméticos.</p>
+              <a href="cursos.html" class="btn btn-outline-primary">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Eventos &amp; Workshops</h5>
+              <p class="card-text">Participe de eventos exclusivos e desenvolva suas habilidades.</p>
+              <a href="eventos.html" class="btn btn-outline-primary">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria de Alunos -->
+  <section class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="mb-4">Galeria de Alunos</h2>
+      <div id="galeriaAlunos" class="d-flex justify-content-center align-items-center">
+        <!-- Fotos serão adicionadas aqui depois -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script>
+    // Carregar footer dinâmico
+    fetch("js/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
