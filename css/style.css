@@ -1,17 +1,282 @@
+/* ===== Galeria de Alunos ===== */
 #galeriaAlunos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espaço entre as fotos */
+  flex-wrap: wrap; /* Quebra linha em telas menores */
   position: relative;
-  width: 100%;
-  max-width: 800px; /* limita a largura */
-  height: 300px;     /* altura do carousel */
-  overflow: hidden;
 }
 
+/* Import de fontes e ícones (Poppins + Bootstrap Icons) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css');
+
+:root{
+  --iee-blue: #0d6efd;
+  --iee-dark: #052c6b;
+  --surface: #eef1f6; /* superfície clara neutra ajustada para contraste */
+  --muted: #6c757d;
+}
+
+/* Global font */
+body{ font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: #212529; background: linear-gradient(rgba(230,233,238,0.88), rgba(230,233,238,0.88)), url('../assets/1.png') center/cover no-repeat; }
+
+/* Branding (navbar) */
+.site-brand { text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
+.brand-logo { width:64px; height:auto; border-radius:8px; box-shadow: 0 6px 18px rgba(2,6,23,0.06); }
+.brand-text .brand-title { font-size: 1.05rem; letter-spacing: -0.2px; color: #06203f; }
+.brand-text .brand-subtitle { display:block; margin-top: -2px; color: var(--muted); }
+
+/* Hero clean (translúcido) */
+.hero-section { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.hero-card { max-width: 820px; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.92); }
+.hero-card .hero-body { padding-left: 24px; padding-right: 24px; }
+.hero-card .lead { color: #16324b; }
+
+@media (max-width: 576px) {
+  .hero-card { margin: 0 12px; }
+  .hero-card .hero-body { padding-left: 14px; padding-right: 14px; }
+  .hero-card .lead { font-size: 1rem; }
+}
+
+@media (max-width: 576px){
+  .brand-logo{ width:48px; }
+  .brand-text .brand-title{ font-size: 0.98rem; }
+}
+
+/* Top carousel (logo/hero carousel) */
+.top-carousel .carousel-item img{ width:100%; height:380px; object-fit:cover; border-radius:8px; }
+@media (max-width: 991px){ .top-carousel .carousel-item img{ height:260px; } }
+@media (max-width: 576px){ .top-carousel .carousel-item img{ height:180px; } }
+
+/* Áreas: modernizar cards */
+.area-card{ background: var(--surface); border: none; border-radius: 12px; padding: 0; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }
+.area-card .card-body{ padding: 1.25rem; display:flex; flex-direction:column; gap:8px; }
+.area-card .icon-top{ display:block; width:56px; height:56px; border-radius:12px; background: rgba(13,110,253,0.08); color: var(--iee-blue); display:flex; align-items:center; justify-content:center; font-size:1.25rem; margin-bottom:6px; }
+.area-card h5{ margin-bottom:0.25rem; font-weight:600; }
+.area-card p{ color: var(--muted); margin-bottom:8px; }
+.area-card:hover{ transform: translateY(-8px); box-shadow: 0 12px 30px rgba(13,110,253,0.12); }
+
+/* Grid responsive explicit: 2 cols mobile, 3 tablet, 4 desktop (keeps current col classes but ensure spacing)
+   The HTML already uses col-6 col-md-4 col-lg-3 which satisfies this. */
+
+/* Center text & buttons on small screens */
+@media (max-width: 576px){ .area-card .card-body { text-align:center; } .area-card .stretched-link { left:0; right:0; top:0; bottom:0; } }
+
+/* Entrada (fade-up) via classe adicionada pelo JS */
+.animated-up{ opacity:0; transform: translateY(14px) scale(.995); transition: opacity 480ms ease, transform 480ms cubic-bezier(.2,.9,.3,1); }
+.animated-up.visible{ opacity:1; transform: translateY(0) scale(1); }
+
+/* Ajustes gerais paleta */
+.btn-primary{ background: var(--iee-blue); border-color: var(--iee-blue); }
+
+/* Footer modernizado quando injetado */
+.iee-footer{ background: var(--iee-blue); color: #fff; }
+.iee-footer a{ color: rgba(255,255,255,0.9); }
+.iee-footer a:hover{ color: #fff; text-decoration:none; }
+.iee-footer .social a{ display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background: rgba(255,255,255,0.08); color:#fff; margin-left:8px; transition: transform .18s ease, background .18s ease; }
+.iee-footer .social a:hover{ transform: translateY(-4px); background: rgba(255,255,255,0.18); }
+.iee-footer .social a .bi{ font-size:18px; }
+
+/* Garantir imagens do carousel e cards não cortarem visualmente */
+img{ max-width:100%; height:auto; }
+
+
 #galeriaAlunos img {
+  width: 140px; /* Tamanho das fotos (aumentado) */
+  height: auto; /* Mantém proporção */
+  object-fit: cover; /* Corta a imagem se necessário */
+  border-radius: 8px; /* Arredonda cantos */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#galeriaAlunos img:hover {
+  transform: scale(1.1); /* Efeito leve de zoom */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ===== Ajuste do carousel (fade) ===== */
+#galeriaAlunos {
+  height: auto; /* Ajusta altura automaticamente */
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  #galeriaAlunos img {
+    width: 100px; /* Fotos menores no celular */
+  }
+}
+
+/* ===== Galeria dedicada (página galeria.html) ===== */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.galeria-grid img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* mantém proporção e preenche área */
+  height: 220px;
+  object-fit: cover;
   border-radius: 8px;
-  display: none; /* o JS vai mostrar a primeira imagem */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Modal / lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.8);
+  z-index: 1050;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 6px;
+}
+.lightbox .controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+.lightbox button {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+/* Carousel da home */
+#homeCarousel {
+  overflow: hidden;
+}
+#homeCarousel .carousel-item img {
+  height: 300px; /* aumentado */
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  #homeCarousel .carousel-item img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  #homeCarousel .carousel-item img {
+    height: 180px;
+  }
+}
+
+/* Footer comum */
+footer.bg-dark a { color: #dcdcdc; text-decoration: underline; }
+footer.bg-dark a:hover { color: #fff; }
+footer.bg-dark img { display: block; }
+
+/* Cards das Áreas de Pós-Graduação */
+.area-card .card-body { display: flex; flex-direction: column; gap: 8px; }
+.area-card .card-title { font-size: 1.05rem; margin-bottom: 0; }
+.area-card .card-text { font-size: 0.85rem; margin-bottom: auto; }
+.area-card .btn { align-self: start; }
+.area-card:hover { transform: translateY(-4px); transition: transform 0.18s ease; }
+
+/* permite que .stretched-link funcione cobrindo o card */
+.area-card { position: relative; }
+
+/* destaque visual para seção filtrada */
+.highlight-section { box-shadow: 0 6px 18px rgba(13,110,253,0.12); border-left: 4px solid rgba(13,110,253,0.9); padding-left: 12px; margin-left: -12px; }
+
+@media (max-width: 576px) {
+  .area-card .card-text { font-size: 0.8rem; }
+}
+
+/* Animação de entrada para cards (fade + subida) */
+.card-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+.card-fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utilitários de delay para stagger (0-9) */
+.stagger-delay-0 { transition-delay: 0ms; }
+.stagger-delay-1 { transition-delay: 50ms; }
+.stagger-delay-2 { transition-delay: 100ms; }
+.stagger-delay-3 { transition-delay: 150ms; }
+.stagger-delay-4 { transition-delay: 200ms; }
+.stagger-delay-5 { transition-delay: 250ms; }
+.stagger-delay-6 { transition-delay: 300ms; }
+.stagger-delay-7 { transition-delay: 350ms; }
+.stagger-delay-8 { transition-delay: 400ms; }
+.stagger-delay-9 { transition-delay: 450ms; }
+
+/* Duração do curso (badge discreta abaixo do título) */
+.course-duration {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #495057; /* mais contraste */
+  margin-top: 6px;
+}
+.course-duration .badge-time {
+  background: rgba(0,0,0,0.06);
+  color: #495057;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* Esconder botão 'Saiba mais' nos cards da página de cursos (visível apenas via HTML se necessário) */
+main .card .btn { display: none !important; }
+
+/* Hero específico para a página de cursos */
+.courses-hero {
+  background: linear-gradient(180deg, rgba(13,110,253,0.95), rgba(13,110,253,0.9)); /* mantém azul primário com leve degradê */
+  color: #ffffff;
+}
+.courses-hero .display-5 {
+  font-size: 2.25rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.courses-hero .lead {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.92);
+  margin-top: 6px;
+}
+.courses-hero .subtitle {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+  opacity: 0.95;
+}
+
+/* foco visível para links que cobrem o card */
+.stretched-link:focus-visible {
+  outline: 3px solid rgba(13,110,253,0.6);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (max-width: 576px) {
+  .courses-hero .display-5 { font-size: 1.6rem; }
+  .courses-hero .lead, .courses-hero .subtitle { font-size: 0.95rem; }
 }
