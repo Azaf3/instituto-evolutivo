@@ -32,13 +32,14 @@ export default function Contato() {
     setMessage('');
 
     try {
-      await submitContact(formData);
+      const result = await submitContact(formData);
       setMessage('✅ Mensagem enviada com sucesso! Entraremos em contato em breve.');
       setFormData({ nome: '', email: '', telefone: '', cursoInteresse: '', mensagem: '' });
       setTimeout(() => setMessage(''), 5000);
     } catch (error) {
-      setMessage('❌ Erro ao enviar mensagem. Tente novamente.');
-      console.error('Erro:', error);
+      console.error('Erro detalhado:', error);
+      const errorMsg = error.message || 'Erro ao enviar mensagem';
+      setMessage(`❌ ${errorMsg}. Verifique sua conexão e tente novamente.`);
     } finally {
       setLoading(false);
     }
