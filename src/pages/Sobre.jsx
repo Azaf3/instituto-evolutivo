@@ -5,8 +5,8 @@ export default function Sobre() {
     <div className="space-y-12">
       {/* Hero */}
       <div 
-        className="h-64 md:h-80 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/assets/cabecalhos/2.png')` }}
+        className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/instituto-evolutivo/cabecalhos/2.png')`, backgroundSize: '80%' }}
       />
 
       {/* About Content */}
@@ -40,19 +40,19 @@ export default function Sobre() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Nossos Valores</h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">✓</span>
+                  <span className="text-blue-600 font-bold mt-1 text-lg">•</span>
                   <span><strong>Excelência:</strong> Comprometimento com a qualidade em tudo o que fazemos</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">✓</span>
+                  <span className="text-blue-600 font-bold mt-1 text-lg">•</span>
                   <span><strong>Inovação:</strong> Mantemos-nos atualizados com as tendências do mercado</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">✓</span>
+                  <span className="text-blue-600 font-bold mt-1 text-lg">•</span>
                   <span><strong>Integridade:</strong> Atuamos com ética e transparência em todas as nossas ações</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">✓</span>
+                  <span className="text-blue-600 font-bold mt-1 text-lg">•</span>
                   <span><strong>Inclusão:</strong> Valorizamos a diversidade e promovemos oportunidades para todos</span>
                 </li>
               </ul>
@@ -87,30 +87,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-blue-600 text-white py-12 rounded-lg">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-8 text-center">Nossos Números</h3>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">10+</div>
-              <p className="text-blue-100">Áreas de Especialização</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">26+</div>
-              <p className="text-blue-100">Programas de Cursos</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">5k+</div>
-              <p className="text-blue-100">Alunos Formados</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <p className="text-blue-100">Taxa de Satisfação</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 }

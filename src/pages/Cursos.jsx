@@ -79,8 +79,8 @@ export default function Cursos() {
     <div className="space-y-12">
       {/* Hero */}
       <div 
-        className="h-64 md:h-80 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/assets/cabecalhos/2.png')` }}
+        className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/instituto-evolutivo/cabecalhos/2.png')`, backgroundSize: '80%' }}
       />
 
       {/* Cursos por Área */}

@@ -33,89 +33,114 @@ export default function Contato() {
     <div className="space-y-12">
       {/* Hero */}
       <div 
-        className="h-64 md:h-80 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.2), rgba(2, 6, 23, 0.2)), url('/assets/cabecalho-contato.png')` }}
+        className="h-32 md:h-40 bg-cover bg-center rounded-lg overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.2), rgba(2, 6, 23, 0.2)), url('/instituto-evolutivo/cabecalho-contato.png')` }}
       />
 
       {/* Formulário */}
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">Entre em Contato</h2>
-          <p className="text-gray-600 text-center mb-8">Preencha o formulário abaixo e entraremos em contato com você em breve.</p>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">Entre em Contato</h2>
+            <p className="text-lg text-gray-600">Preencha o formulário abaixo e entraremos em contato em breve</p>
+          </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-blue-600">
+            {/* Form Header */}
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-8 py-6 border-b border-gray-200">
+              <p className="text-gray-700 text-sm font-medium">Nos ajude a entender melhor sua necessidade</p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="p-8 space-y-6">
+              {/* Nome */}
               <div>
-                <label className="block text-gray-900 font-semibold mb-2">Nome *</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">
+                  Nome Completo <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   name="nome"
                   value={formData.nome}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
-                  placeholder="Seu nome"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-gray-50 hover:bg-white"
+                  placeholder="João Silva"
                 />
               </div>
 
+              {/* Email e Telefone */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-900 font-semibold mb-2">Email *</label>
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">
+                    Email <span className="text-red-500">*</span>
+                  </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-gray-50 hover:bg-white"
                     placeholder="seu@email.com"
                   />
                 </div>
-
                 <div>
-                  <label className="block text-gray-900 font-semibold mb-2">Telefone</label>
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">
+                    Telefone
+                  </label>
                   <input
                     type="tel"
                     name="telefone"
                     value={formData.telefone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
-                    placeholder="(xx) xxxxx-xxxx"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-gray-50 hover:bg-white"
+                    placeholder="(11) 9999-9999"
                   />
                 </div>
               </div>
 
+              {/* Curso de Interesse */}
               <div>
-                <label className="block text-gray-900 font-semibold mb-2">Curso de Interesse</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">
+                  Curso de Interesse
+                </label>
                 <input
                   type="text"
                   name="cursoInteresse"
                   value={formData.cursoInteresse}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
-                  placeholder="(opcional)"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-gray-50 hover:bg-white"
+                  placeholder="Ex: Enfermagem Estética"
                 />
               </div>
 
+              {/* Mensagem */}
               <div>
-                <label className="block text-gray-900 font-semibold mb-2">Mensagem *</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">
+                  Mensagem <span className="text-red-500">*</span>
+                </label>
                 <textarea
                   name="mensagem"
                   value={formData.mensagem}
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none resize-none"
-                  placeholder="Escreva sua mensagem"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none bg-gray-50 hover:bg-white"
+                  placeholder="Conte-nos mais sobre sua solicitação..."
                 />
               </div>
 
+              {/* Botão Submit */}
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition"
+                className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 hover:from-blue-700 hover:via-blue-800 hover:to-blue-700 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
               >
                 Enviar Mensagem
               </button>
+
+              <p className="text-center text-xs text-gray-500 mt-4">
+                Responderemos sua mensagem em até 24 horas
+              </p>
             </form>
           </div>
         </div>

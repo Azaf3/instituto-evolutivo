@@ -1,5 +1,6 @@
 import React from 'react';
-import { Clock, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Clock, BookOpen, ArrowRight } from 'lucide-react';
 
 export default function CourseCard({ title, duration, hours, description, area }) {
   return (
@@ -23,13 +24,13 @@ export default function CourseCard({ title, duration, hours, description, area }
 
         <p className="text-gray-700 text-sm mb-4">{description}</p>
         
-        <a 
-          href={`/contato?curso=${encodeURIComponent(title)}`}
+        <Link 
+          to={`/contato?curso=${encodeURIComponent(title)}`}
           className="text-blue-600 hover:text-blue-700 font-semibold text-sm transition flex items-center gap-1"
         >
           Tenho interesse
           <ArrowRight size={16} />
-        </a>
+        </Link>
       </div>
 
       {/* Decorative corner marker */}
@@ -41,5 +42,3 @@ export default function CourseCard({ title, duration, hours, description, area }
     </div>
   );
 }
-
-import { ArrowRight } from 'lucide-react';

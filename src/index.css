@@ -11,7 +11,7 @@
 body {
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   color: #212529;
-  background: linear-gradient(rgba(230, 233, 238, 0.88), rgba(230, 233, 238, 0.88)), url('/assets/1.png') center/cover no-repeat;
+  background: linear-gradient(rgba(230, 233, 238, 0.88), rgba(230, 233, 238, 0.88)), url('/instituto-evolutivo/1.png') center/cover no-repeat;
   background-attachment: fixed;
 }
 

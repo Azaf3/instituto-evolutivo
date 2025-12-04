@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import HeroCard from '../components/HeroCard';
 import CourseCard from '../components/CourseCard';
 
 const AREAS = [
-  { id: 'saude', name: 'Saúde', icon: '🏥' },
-  { id: 'educacao', name: 'Educação', icon: '📚' },
-  { id: 'administracao', name: 'Administração e Gestão', icon: '💼' },
-  { id: 'direito', name: 'Direito', icon: '⚖️' },
-  { id: 'tecnologia', name: 'Tecnologia e Inovação', icon: '💻' },
-  { id: 'estetica', name: 'Estética e Beleza', icon: '💅' },
-  { id: 'engenharia', name: 'Engenharia e Arquitetura', icon: '🏗️' },
-  { id: 'comunicacao', name: 'Comunicação e Marketing', icon: '📢' },
-  { id: 'humanas', name: 'Ciências Humanas e Sociais', icon: '🎓' },
-  { id: 'meioambiente', name: 'Meio Ambiente e Sustentabilidade', icon: '🌱' },
+  { id: 'saude', name: 'Saúde', icon: null },
+  { id: 'educacao', name: 'Educação', icon: null },
+  { id: 'administracao', name: 'Administração e Gestão', icon: null },
+  { id: 'direito', name: 'Direito', icon: null },
+  { id: 'tecnologia', name: 'Tecnologia e Inovação', icon: null },
+  { id: 'estetica', name: 'Estética e Beleza', icon: null },
+  { id: 'engenharia', name: 'Engenharia e Arquitetura', icon: null },
+  { id: 'comunicacao', name: 'Comunicação e Marketing', icon: null },
+  { id: 'humanas', name: 'Ciências Humanas e Sociais', icon: null },
+  { id: 'meioambiente', name: 'Meio Ambiente e Sustentabilidade', icon: null },
 ];
 
 const CURSOS = [
@@ -42,7 +43,7 @@ export default function Home() {
       <HeroCard 
         title="Programas de Especialização"
         subtitle="Cursos pensados para o seu crescimento profissional"
-        image="/assets/cabecalhos/1.png"
+        image="/cabecalhos/1.png"
         cta="Conheça nossos cursos"
         ctaLink="/cursos"
       />
@@ -102,19 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-blue-600 text-white py-12 rounded-lg">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Pronto para evoluir?</h2>
-          <p className="text-lg mb-6 text-blue-100">Conheça todos os nossos programas de especialização e escolha o seu caminho.</p>
-          <a
-            href="/cursos"
-            className="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition"
-          >
-            Explorar Cursos
-          </a>
-        </div>
-      </section>
+
     </div>
   );
 }

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 
 const GALERIA_FOTOS = [
-  { src: '/assets/img-alunos/escuta-solidaria.png', alt: 'Escuta Solidária 1' },
-  { src: '/assets/img-alunos/escuta-solidaria2.png', alt: 'Escuta Solidária 2' },
-  { src: '/assets/img-alunos/escuta-solidaria3.png', alt: 'Escuta Solidária 3' },
-  { src: '/assets/img-alunos/formatura1.png', alt: 'Formatura 1' },
-  { src: '/assets/img-alunos/formatura2.png', alt: 'Formatura 2' },
-  { src: '/assets/img-alunos/formatura3.png', alt: 'Formatura 3' },
+  { src: '/instituto-evolutivo/img-alunos/escuta-solidaria.png', alt: 'Escuta Solidária 1' },
+  { src: '/instituto-evolutivo/img-alunos/escuta-solidaria2.png', alt: 'Escuta Solidária 2' },
+  { src: '/instituto-evolutivo/img-alunos/escuta-solidaria3.png', alt: 'Escuta Solidária 3' },
+  { src: '/instituto-evolutivo/img-alunos/formatura1.png', alt: 'Formatura 1' },
+  { src: '/instituto-evolutivo/img-alunos/formatura2.png', alt: 'Formatura 2' },
+  { src: '/instituto-evolutivo/img-alunos/formatura3.png', alt: 'Formatura 3' },
 ];
 
 export default function Galeria() {
@@ -17,8 +17,8 @@ export default function Galeria() {
     <div className="space-y-12">
       {/* Hero */}
       <div 
-        className="h-64 md:h-80 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/assets/cabecalhos/1.png')` }}
+        className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/instituto-evolutivo/cabecalhos/1.png')`, backgroundSize: '80%' }}
       />
 
       {/* Galeria */}

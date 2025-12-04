@@ -10,7 +10,7 @@ import Contato from './pages/Contato';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/instituto-evolutivo/">
       <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
         <main className="flex-1">
