@@ -12,7 +12,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/instituto-evolutivo/img-logos/logo-colorido-iee.jpg" 
+              src="/img-logos/logo-colorido-iee.jpg" 
               alt="Logo Instituto Evolutivo" 
               className="w-12 h-auto rounded"
             />

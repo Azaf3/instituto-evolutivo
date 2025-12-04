@@ -34,7 +34,7 @@ export default function Contato() {
       {/* Hero */}
       <div 
         className="h-32 md:h-40 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.2), rgba(2, 6, 23, 0.2)), url('/instituto-evolutivo/cabecalho-contato.png')` }}
+        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.2), rgba(2, 6, 23, 0.2)), url('/cabecalho-contato.png')` }}
       />
 
       {/* Formulário */}
