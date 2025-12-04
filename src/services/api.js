@@ -13,7 +13,6 @@ export const submitContact = async (data) => {
       },
       body: JSON.stringify(data),
       mode: 'cors',
-      credentials: 'include',
     });
 
     console.log('Status da resposta:', response.status);
