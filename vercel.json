@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/instituto-evolutivo/:path*",
+      "source": "/instituto-evolutivo/(?!.*\\.)",
       "destination": "/instituto-evolutivo/index.html"
     }
   ]
