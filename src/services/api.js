@@ -1,9 +1,9 @@
-// URL do backend - ajuste conforme necessário
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+// URL do backend
+const API_URL = import.meta.env.VITE_API_URL || 'https://instituto-evolutivo-backend-production.up.railway.app';
 
 export const submitContact = async (data) => {
   try {
-    const response = await fetch(`${API_URL}/contato`, {
+    const response = await fetch(`${API_URL}/api/submissions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
