@@ -12,10 +12,21 @@ export const submitContact = async (data) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
+      mode: 'cors',
+      credentials: 'include',
     });
 
     console.log('Status da resposta:', response.status);
-    const responseData = await response.json();
+    
+    const contentType = response.headers.get('content-type');
+    let responseData;
+    
+    if (contentType && contentType.includes('application/json')) {
+      responseData = await response.json();
+    } else {
+      responseData = await response.text();
+    }
+    
     console.log('Resposta do servidor:', responseData);
 
     if (!response.ok) {
