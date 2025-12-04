@@ -13,6 +13,17 @@ const GALERIA_FOTOS = [
 export default function Galeria() {
   const [fotoSelecionada, setFotoSelecionada] = useState(null);
 
+  // Fechar modal ao pressionar ESC
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setFotoSelecionada(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="space-y-12">
       {/* Hero */}
@@ -45,19 +56,27 @@ export default function Galeria() {
 
       {/* Lightbox Modal */}
       {fotoSelecionada && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full">
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-85 z-50 flex items-center justify-center p-4"
+          onClick={() => setFotoSelecionada(null)}
+        >
+          <div 
+            className="relative max-w-2xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setFotoSelecionada(null)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300"
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition"
+              aria-label="Fechar"
             >
               <X size={32} />
             </button>
             <img
               src={fotoSelecionada.src}
               alt={fotoSelecionada.alt}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg shadow-2xl"
             />
+            <p className="text-white text-center mt-3 text-sm">Clique fora, no X ou pressione ESC para fechar</p>
           </div>
         </div>
       )}

@@ -6,7 +6,7 @@ export default function HeroCard({ title, subtitle, image, cta, ctaLink }) {
   return (
     <section 
       className="relative h-48 md:h-72 bg-cover bg-center rounded-lg overflow-hidden shadow-lg"
-      style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.3), rgba(2, 6, 23, 0.3)), url('/instituto-evolutivo${image}')`, backgroundSize: '80%' }}
+      style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.3), rgba(2, 6, 23, 0.3)), url('${image}')`, backgroundSize: '80%' }}
     >
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-3">{title}</h1>
