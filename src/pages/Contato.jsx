@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { submitContact } from '../services/api';
 
 export default function Contato() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,9 @@ export default function Contato() {
     cursoInteresse: '',
     mensagem: '',
   });
+
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,11 +26,22 @@ export default function Contato() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Formulário enviado:', formData);
-    alert('Obrigado! Entraremos em contato em breve.');
-    setFormData({ nome: '', email: '', telefone: '', cursoInteresse: '', mensagem: '' });
+    setLoading(true);
+    setMessage('');
+
+    try {
+      await submitContact(formData);
+      setMessage('✅ Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      setFormData({ nome: '', email: '', telefone: '', cursoInteresse: '', mensagem: '' });
+      setTimeout(() => setMessage(''), 5000);
+    } catch (error) {
+      setMessage('❌ Erro ao enviar mensagem. Tente novamente.');
+      console.error('Erro:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -52,6 +67,17 @@ export default function Contato() {
             </div>
 
             <form onSubmit={handleSubmit} className="p-8 space-y-6">
+              {/* Mensagem de Status */}
+              {message && (
+                <div className={`p-4 rounded-lg text-center font-semibold ${
+                  message.includes('✅') 
+                    ? 'bg-green-100 text-green-800' 
+                    : 'bg-red-100 text-red-800'
+                }`}>
+                  {message}
+                </div>
+              )}
+
               {/* Nome */}
               <div>
                 <label className="block text-sm font-semibold text-gray-900 mb-2">
@@ -133,9 +159,10 @@ export default function Contato() {
               {/* Botão Submit */}
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 hover:from-blue-700 hover:via-blue-800 hover:to-blue-700 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 hover:from-blue-700 hover:via-blue-800 hover:to-blue-700 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar Mensagem
+                {loading ? 'Enviando...' : 'Enviar Mensagem'}
               </button>
 
               <p className="text-center text-xs text-gray-500 mt-4">
