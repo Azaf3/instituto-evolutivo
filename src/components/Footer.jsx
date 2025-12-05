@@ -34,19 +34,19 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <Mail size={18} className="text-gray-400 flex-shrink-0 mt-0.5" />
-                <a href="mailto:contato@institutevo.com.br" className="text-gray-400 hover:text-white transition">
-                  contato@institutevo.com.br
+                <a href="mailto:evolutivo.secretaria@gmail.com" className="text-gray-400 hover:text-white transition">
+                  evolutivo.secretaria@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-3">
                 <Phone size={18} className="text-gray-400 flex-shrink-0 mt-0.5" />
-                <a href="tel:+5511999999999" className="text-gray-400 hover:text-white transition">
-                  (11) 9999-9999
+                <a href="tel:+5561986239797" className="text-gray-400 hover:text-white transition">
+                  (61) 98623-9797
                 </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-gray-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">São Paulo, SP</span>
+                <span className="text-gray-400">Brasília — Gama, DF</span>
               </div>
             </div>
           </div>
