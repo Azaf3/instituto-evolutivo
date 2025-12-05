@@ -53,13 +53,14 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Áreas de Pós-Graduação</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {AREAS.map((area) => (
-            <div 
+            <Link
               key={area.id}
-              className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center cursor-pointer hover:bg-blue-50"
+              to={`/cursos?area=${area.id}`}
+              className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center hover:bg-blue-50 no-underline"
             >
               <div className="text-4xl mb-2">{area.icon}</div>
               <h3 className="font-semibold text-gray-900 text-sm">{area.name}</h3>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
