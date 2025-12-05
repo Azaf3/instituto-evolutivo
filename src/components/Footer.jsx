@@ -55,7 +55,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition">
+              <a href="https://www.facebook.com/institutoevolutivo" target="_blank" rel="noopener noreferrer" aria-label="Facebook Instituto Evolutivo" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition">
                 <Facebook size={20} />
               </a>
               <a href="https://www.instagram.com/instituto_evolutivo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Instituto Evolutivo" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition">
