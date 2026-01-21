@@ -7,6 +7,7 @@ import Cursos from './pages/Cursos';
 import Sobre from './pages/Sobre';
 import Galeria from './pages/Galeria';
 import Contato from './pages/Contato';
+import CursoPsicanalise from './pages/CursoPsicanalise';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cursos" element={<Cursos />} />
+            <Route path="/cursos/psicanalise" element={<CursoPsicanalise />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/galeria" element={<Galeria />} />
             <Route path="/contato" element={<Contato />} />

@@ -32,7 +32,7 @@ export default function Contato() {
     setMessage('');
 
     try {
-      const result = await submitContact(formData);
+      await submitContact(formData);
       setMessage('✅ Mensagem enviada com sucesso! Entraremos em contato em breve.');
       setFormData({ nome: '', email: '', telefone: '', cursoInteresse: '', mensagem: '' });
       setTimeout(() => setMessage(''), 5000);
@@ -49,8 +49,13 @@ export default function Contato() {
     <div className="space-y-12">
       {/* Hero */}
       <div 
-        className="h-32 md:h-40 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.2), rgba(2, 6, 23, 0.2)), url('/cabecalho-contato.png')` }}
+        className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.2), rgba(2, 6, 23, 0.2)), url('/cabecalhos/3.png')`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}
       />
 
       {/* Formulário */}

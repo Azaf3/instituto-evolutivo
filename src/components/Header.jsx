@@ -26,6 +26,7 @@ export default function Header() {
           <div className="hidden md:flex gap-8 items-center">
             <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium transition">Início</Link>
             <Link to="/cursos" className="text-gray-700 hover:text-blue-600 font-medium transition">Cursos</Link>
+            <Link to="/cursos/psicanalise" className="text-gray-700 hover:text-blue-600 font-medium transition">Psicanálise</Link>
             <Link to="/sobre" className="text-gray-700 hover:text-blue-600 font-medium transition">Sobre</Link>
             <Link to="/galeria" className="text-gray-700 hover:text-blue-600 font-medium transition">Galeria</Link>
             <Link to="/contato" className="text-gray-700 hover:text-blue-600 font-medium transition">Contato</Link>
@@ -45,6 +46,7 @@ export default function Header() {
           <div className="md:hidden mt-4 pb-4 border-t flex flex-col gap-3">
             <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium transition block py-2">Início</Link>
             <Link to="/cursos" className="text-gray-700 hover:text-blue-600 font-medium transition block py-2">Cursos</Link>
+            <Link to="/cursos/psicanalise" className="text-gray-700 hover:text-blue-600 font-medium transition block py-2">Psicanálise</Link>
             <Link to="/sobre" className="text-gray-700 hover:text-blue-600 font-medium transition block py-2">Sobre</Link>
             <Link to="/galeria" className="text-gray-700 hover:text-blue-600 font-medium transition block py-2">Galeria</Link>
             <Link to="/contato" className="text-gray-700 hover:text-blue-600 font-medium transition block py-2">Contato</Link>

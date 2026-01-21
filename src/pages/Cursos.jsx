@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import HeroCard from '../components/HeroCard';
 import CourseCard from '../components/CourseCard';
+import { Link } from 'react-router-dom';
 
 const TODOS_OS_CURSOS = {
   saude: [
@@ -78,9 +79,12 @@ export default function Cursos() {
   return (
     <div className="space-y-12">
       {/* Hero */}
-      <div 
-        className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/cabecalhos/2.png')`, backgroundSize: '80%' }}
+      <HeroCard
+        title="Desenvolvimento Profissional"
+        subtitle="Cursos presenciais e online para alavancar sua carreira"
+        image="/cabecalhos/cab-cursos.png"
+        cta={null}
+        overlayOpacity={0.4}
       />
 
       {/* Cursos por Área */}
@@ -90,11 +94,23 @@ export default function Cursos() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6">{AREAS_INFO[areaId]}</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {cursos.map((curso, idx) => (
-                <CourseCard 
-                  key={idx}
-                  {...curso}
-                  area={AREAS_INFO[areaId]}
-                />
+                curso.title === 'Psicanálise Clínica' ? (
+                  <Link
+                    key={idx}
+                    to="/cursos/psicanalise"
+                    className="block bg-white rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 overflow-hidden no-underline p-5"
+                  >
+                    <span className="inline-block text-xs font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full mb-3">{AREAS_INFO[areaId]}</span>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{curso.title}</h3>
+                    <p className="text-gray-700 text-sm">{curso.description}</p>
+                  </Link>
+                ) : (
+                  <CourseCard 
+                    key={idx}
+                    {...curso}
+                    area={AREAS_INFO[areaId]}
+                  />
+                )
               ))}
             </div>
           </div>
