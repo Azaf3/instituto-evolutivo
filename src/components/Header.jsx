@@ -7,22 +7,20 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-3 md:px-4 py-3 md:py-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-2 md:gap-3">
             <img 
               src="/img-logos/logo-colorido-iee.jpg" 
               alt="Logo Instituto Evolutivo" 
-              className="w-12 h-auto rounded"
+              className="w-10 md:w-12 h-auto rounded"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-bold text-gray-900">Instituto Evolutivo</span>
-              <span className="text-xs font-bold text-gray-600">de Educação</span>
+              <span className="text-xs md:text-sm font-bold text-gray-900">Instituto Evolutivo</span>
+              <span className="text-[10px] md:text-xs font-bold text-gray-600">de Educação</span>
             </div>
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex gap-8 items-center">
             <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium transition">Início</Link>
             <Link to="/cursos" className="text-gray-700 hover:text-blue-600 font-medium transition">Cursos</Link>
@@ -32,7 +30,6 @@ export default function Header() {
             <Link to="/contato" className="text-gray-700 hover:text-blue-600 font-medium transition">Contato</Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button 
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
@@ -41,7 +38,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 border-t flex flex-col gap-3">
             <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium transition block py-2">Início</Link>

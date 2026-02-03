@@ -78,16 +78,15 @@ export default function Cursos() {
 
   return (
     <div className="space-y-12">
-      {/* Hero */}
       <HeroCard
         title="Desenvolvimento Profissional"
         subtitle="Cursos presenciais e online para alavancar sua carreira"
         image="/cabecalhos/cab-cursos.png"
+        imageMobile="/cabecalhos/cbc-mob2.png"
         cta={null}
         overlayOpacity={0.4}
       />
 
-      {/* Cursos por Área */}
       <section className="container mx-auto px-4">
         {Object.entries(cursosExibir).map(([areaId, cursos]) => (
           <div key={areaId} className="mb-12">

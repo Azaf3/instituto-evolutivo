@@ -26,13 +26,11 @@ export default function Galeria() {
 
   return (
     <div className="space-y-12">
-      {/* Hero */}
       <div 
         className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
         style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/cabecalhos/3.png')`, backgroundSize: 'cover' }}
       />
 
-      {/* Galeria */}
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Nossos Momentos</h2>
         
@@ -54,7 +52,6 @@ export default function Galeria() {
         </div>
       </section>
 
-      {/* Lightbox Modal */}
       {fotoSelecionada && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-85 z-50 flex items-center justify-center p-4"

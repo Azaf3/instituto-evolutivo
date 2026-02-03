@@ -8,15 +8,12 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-100 pt-16 pb-8 mt-16">
       <div className="container mx-auto px-4">
-        {/* Main Content */}
         <div className="grid md:grid-cols-4 gap-10 mb-12">
-          {/* About */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Instituto Evolutivo</h3>
             <p className="text-sm text-gray-400 leading-relaxed">Programas de especialização para o seu crescimento profissional e desenvolvimento pessoal.</p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Navegação</h4>
             <ul className="text-sm space-y-3">
@@ -28,7 +25,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Contato</h4>
             <div className="space-y-3 text-sm">
@@ -51,7 +47,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social Links */}
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
@@ -61,12 +56,10 @@ export default function Footer() {
               <a href="https://www.instagram.com/instituto_evolutivo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Instituto Evolutivo" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition">
                 <Instagram size={20} />
               </a>
-              {/* LinkedIn removido conforme solicitado - mantemos apenas Facebook e Instagram */}
             </div>
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-800 pt-8">
           <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
             <p>&copy; {currentYear} Instituto Evolutivo de Educação. Todos os direitos reservados.</p>

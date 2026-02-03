@@ -47,7 +47,6 @@ export default function Contato() {
 
   return (
     <div className="space-y-12">
-      {/* Hero */}
       <div 
         className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
         style={{
@@ -58,7 +57,6 @@ export default function Contato() {
         }}
       />
 
-      {/* Formulário */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
@@ -73,7 +71,6 @@ export default function Contato() {
             </div>
 
             <form onSubmit={handleSubmit} className="p-8 space-y-6">
-              {/* Mensagem de Status */}
               {message && (
                 <div className={`p-4 rounded-lg text-center font-semibold ${
                   message.includes('✅') 
@@ -84,7 +81,6 @@ export default function Contato() {
                 </div>
               )}
 
-              {/* Nome */}
               <div>
                 <label className="block text-sm font-semibold text-gray-900 mb-2">
                   Nome Completo <span className="text-red-500">*</span>
@@ -100,7 +96,6 @@ export default function Contato() {
                 />
               </div>
 
-              {/* Email e Telefone */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-900 mb-2">
@@ -131,7 +126,6 @@ export default function Contato() {
                 </div>
               </div>
 
-              {/* Curso de Interesse */}
               <div>
                 <label className="block text-sm font-semibold text-gray-900 mb-2">
                   Curso de Interesse
@@ -146,7 +140,6 @@ export default function Contato() {
                 />
               </div>
 
-              {/* Mensagem */}
               <div>
                 <label className="block text-sm font-semibold text-gray-900 mb-2">
                   Mensagem <span className="text-red-500">*</span>
@@ -162,7 +155,6 @@ export default function Contato() {
                 />
               </div>
 
-              {/* Botão Submit */}
               <button
                 type="submit"
                 disabled={loading}

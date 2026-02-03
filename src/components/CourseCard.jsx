@@ -35,7 +35,6 @@ export default function CourseCard({ title, duration, hours, description, area }
         </div>
       </div>
 
-      {/* Decorative corner marker */}
       <div className="absolute bottom-2 right-2 w-10 h-10 text-blue-200 opacity-30 pointer-events-none">
         <svg fill="currentColor" viewBox="0 0 20 20">
           <path d="M16.414 3.586a2 2 0 00-2.828 0L9 8.172V4a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h4a2 2 0 002-2v-4.172l4.586-4.586a2 2 0 000-2.828z" />

@@ -13,7 +13,6 @@ export default function CursoPsicanalise() {
 
       <section className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Conteúdo principal */}
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Sobre o Curso</h2>
             <p className="text-gray-700 mb-4">O Curso de Psicanálise do Instituto Evolutivo de Educação é uma formação presencial que oferece base teórica e prática para a compreensão do sujeito, da subjetividade e das dinâmicas inconscientes.</p>
@@ -42,7 +41,6 @@ export default function CursoPsicanalise() {
             </div>
           </div>
 
-          {/* Sidebar com valores */}
           <aside className="md:col-span-1">
             <div className="sticky top-24 space-y-4">
               <div className="bg-white border rounded-lg p-6 shadow text-center">

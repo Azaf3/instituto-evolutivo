@@ -3,7 +3,6 @@ import React from 'react';
 export default function Sobre() {
   return (
     <div className="space-y-12">
-      {/* Hero */}
       <div 
         className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
         style={{
@@ -14,7 +13,6 @@ export default function Sobre() {
         }}
       />
 
-      {/* About Content */}
       <section className="container mx-auto px-4">
         <div className="max-w-3xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Sobre o Instituto Evolutivo</h2>

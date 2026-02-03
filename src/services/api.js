@@ -1,4 +1,3 @@
-// URL do backend
 const API_URL = import.meta.env.VITE_API_URL || 'https://instituto-evolutivo-backend-production.up.railway.app';
 
 export const submitContact = async (data) => {

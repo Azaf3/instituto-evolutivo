@@ -39,16 +39,15 @@ export default function Home() {
 
   return (
     <div className="space-y-12">
-      {/* Hero */}
       <HeroCard 
         title="Programas de Especialização"
         subtitle="Cursos pensados para o seu crescimento profissional"
         image="/cabecalhos/1.png"
+        imageMobile="/cabecalhos/cbc-mob1.png"
         cta="Conheça nossos cursos"
         ctaLink="/cursos"
       />
 
-      {/* Areas Section */}
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Áreas de Pós-Graduação</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -65,7 +64,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Courses Carousel */}
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Cursos em Destaque</h2>
         <div className="relative">
@@ -75,7 +73,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Carousel Controls */}
           <div className="flex justify-center gap-4 mt-6">
             <button
               onClick={prevSlide}
