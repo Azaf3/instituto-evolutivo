@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const GALERIA_FOTOS = [
   { src: '/img-alunos/escuta-solidaria.png', alt: 'Escuta Solidária 1' },
@@ -26,6 +27,11 @@ export default function Galeria() {
 
   return (
     <div className="space-y-12">
+      <SEO
+        title="Galeria"
+        description="Veja os momentos especiais do Instituto Evolutivo de Educação: eventos, formaturas e muito mais."
+        path="/galeria"
+      />
       <div 
         className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
         style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.4)), url('/cabecalhos/3.png')`, backgroundSize: 'cover' }}

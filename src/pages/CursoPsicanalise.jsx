@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroCard from '../components/HeroCard';
+import SEO from '../components/SEO';
 
 export default function CursoPsicanalise() {
   return (
     <div className="space-y-12">
+      <SEO
+        title="Psicanálise Clínica"
+        description="Curso de Psicanálise Clínica do Instituto Evolutivo: formação presencial de 24 meses com aulas semanais. Para profissionais de saúde, educação e ciências humanas."
+        path="/cursos/psicanalise"
+      />
       <HeroCard
         image="/cabecalhos/cab-psicanalise.png"
         cta={null}
@@ -35,10 +41,6 @@ export default function CursoPsicanalise() {
             <h3 className="text-lg font-semibold text-gray-900 mt-6">Instituição</h3>
             <p className="text-gray-700 mb-6">Instituto Evolutivo de Educação — instituição dedicada à formação presencial e ao desenvolvimento humano, com foco na qualidade do ensino, ética e compromisso educacional.</p>
 
-            <div className="bg-gray-50 border rounded-lg p-4 text-gray-700">
-              <strong>Observação técnica:</strong>
-              <p className="mt-2">Esta página possui layout próprio e visual sóbrio mantendo a identidade visual do site. Não há CTA emocional final — para manifestar interesse utilize a página de contato.</p>
-            </div>
           </div>
 
           <aside className="md:col-span-1">

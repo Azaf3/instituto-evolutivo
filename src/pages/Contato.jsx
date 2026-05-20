@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { submitContact } from '../services/api';
+import { TODOS_OS_TITULOS } from '../data/cursos';
 
 export default function Contato() {
   const [formData, setFormData] = useState({
@@ -65,7 +66,6 @@ export default function Contato() {
           </div>
 
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-blue-600">
-            {/* Form Header */}
             <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-8 py-6 border-b border-gray-200">
               <p className="text-gray-700 text-sm font-medium">Nos ajude a entender melhor sua necessidade</p>
             </div>
@@ -121,7 +121,7 @@ export default function Contato() {
                     value={formData.telefone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-gray-50 hover:bg-white"
-                    placeholder="(11) 9999-9999"
+                    placeholder="(61) 9999-9999"
                   />
                 </div>
               </div>
@@ -130,14 +130,27 @@ export default function Contato() {
                 <label className="block text-sm font-semibold text-gray-900 mb-2">
                   Curso de Interesse
                 </label>
-                <input
-                  type="text"
+                <select
                   name="cursoInteresse"
                   value={formData.cursoInteresse}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-gray-50 hover:bg-white"
-                  placeholder="Ex: Enfermagem Estética"
-                />
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-gray-50 hover:bg-white text-gray-700"
+                >
+                  <option value="">Selecione um curso...</option>
+                  {Object.values(
+                    TODOS_OS_TITULOS.reduce((acc, { title, area }) => {
+                      if (!acc[area]) acc[area] = { area, cursos: [] };
+                      acc[area].cursos.push(title);
+                      return acc;
+                    }, {})
+                  ).map(({ area, cursos }) => (
+                    <optgroup key={area} label={area}>
+                      {cursos.map((title) => (
+                        <option key={title} value={title}>{title}</option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
               </div>
 
               <div>

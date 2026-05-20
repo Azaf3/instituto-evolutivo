@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import HeroCard from '../components/HeroCard';
 import CourseCard from '../components/CourseCard';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const TODOS_OS_CURSOS = {
   saude: [
@@ -78,6 +79,11 @@ export default function Cursos() {
 
   return (
     <div className="space-y-12">
+      <SEO
+        title="Cursos de Pós-Graduação e Especialização"
+        description="Confira todos os cursos de especialização do Instituto Evolutivo: Saúde, Educação, Administração, Direito, Tecnologia, Estética e muito mais. Presencial e online."
+        path="/cursos"
+      />
       <HeroCard
         title="Desenvolvimento Profissional"
         subtitle="Cursos presenciais e online para alavancar sua carreira"

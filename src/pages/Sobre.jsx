@@ -1,8 +1,14 @@
+import SEO from '../components/SEO';
 import React from 'react';
 
 export default function Sobre() {
   return (
     <div className="space-y-12">
+      <SEO
+        title="Sobre o Instituto"
+        description="Conheça o Instituto Evolutivo de Educação: nossa missão, visão, valores e o compromisso com a formação profissional de qualidade em Brasília — Gama, DF."
+        path="/sobre"
+      />
       <div 
         className="h-48 md:h-56 bg-cover bg-center rounded-lg overflow-hidden"
         style={{
