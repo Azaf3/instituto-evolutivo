@@ -2,7 +2,7 @@
 
 Site oficial do Instituto Evolutivo de Educação: catálogo de pós-graduação e cursos organizados por área, com página de cada curso e contato direto com o atendimento.
 
-🔗 **No ar:** https://institutoevolutivo.com.br
+🔗 **No ar:** https://azaf3.github.io/instituto-evolutivo/
 
 ![Página inicial do site](docs/screenshot.jpg)
 
