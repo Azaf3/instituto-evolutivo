@@ -12,7 +12,7 @@ import CursoPsicanalise from './pages/CursoPsicanalise';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
         <main className="flex-1">

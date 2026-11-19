@@ -12,7 +12,7 @@ export default function CursoPsicanalise() {
         path="/cursos/psicanalise"
       />
       <HeroCard
-        image="/cabecalhos/cab-psicanalise.png"
+        image={`${import.meta.env.BASE_URL}cabecalhos/cab-psicanalise.png`}
         cta={null}
         overlayOpacity={0}
       />

@@ -11,7 +11,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 md:gap-3">
             <img 
-              src="/img-logos/logo-colorido-iee.jpg" 
+              src={`${import.meta.env.BASE_URL}img-logos/logo-colorido-iee.jpg`} 
               alt="Logo Instituto Evolutivo" 
               className="w-10 md:w-12 h-auto rounded"
             />

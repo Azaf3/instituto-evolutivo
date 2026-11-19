@@ -52,8 +52,8 @@ export default function Home() {
       <HeroCard
         title="Programas de Especialização"
         subtitle="Cursos pensados para o seu crescimento profissional"
-        image="/cabecalhos/1.png"
-        imageMobile="/cabecalhos/cbc-mob1.png"
+        image={`${import.meta.env.BASE_URL}cabecalhos/1.png`}
+        imageMobile={`${import.meta.env.BASE_URL}cabecalhos/cbc-mob1.png`}
         cta="Conheça nossos cursos"
         ctaLink="/cursos"
       />

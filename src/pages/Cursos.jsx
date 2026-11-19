@@ -87,8 +87,8 @@ export default function Cursos() {
       <HeroCard
         title="Desenvolvimento Profissional"
         subtitle="Cursos presenciais e online para alavancar sua carreira"
-        image="/cabecalhos/cab-cursos.png"
-        imageMobile="/cabecalhos/cbc-mob2.png"
+        image={`${import.meta.env.BASE_URL}cabecalhos/cab-cursos.png`}
+        imageMobile={`${import.meta.env.BASE_URL}cabecalhos/cbc-mob2.png`}
         cta={null}
         overlayOpacity={0.4}
       />
